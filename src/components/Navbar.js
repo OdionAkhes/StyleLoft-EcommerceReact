@@ -7,9 +7,9 @@ import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
 import CartButtons from "./CartButtons";
-
+import { useProductsContext } from "../context/products_context";
 const Nav = () => {
-
+const {openSidebar} = useProductsContext()
   return (
     <NavContainer>
       <div className="nav-center">
@@ -17,7 +17,7 @@ const Nav = () => {
           <Link to="/">
             <img src={logo} alt="comfy sloth" />
           </Link>
-          <button type="button" className="nav-toggle" >
+          <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />
           </button>
         </div>
@@ -30,11 +30,10 @@ const Nav = () => {
               </li>
             );
           })}
-      
-            <li>
-              <Link to="/checkout">checkout</Link>
-            </li>
-       
+
+          <li>
+            <Link to="/checkout">checkout</Link>
+          </li>
         </ul>
         <CartButtons />
       </div>
