@@ -1,14 +1,18 @@
-import React from 'react'
+/** @format */
+
+import React from "react";
 import styled from "styled-components";
 const Footer = () => {
   return (
     <Container>
-      <h5>&copy; {new Date().getFullYear()}</h5>
-
-            <span> StyleLoft</span>
+      <h5>
+        &copy; {new Date().getFullYear()}
+        <span> ComfySloth </span>
+      </h5>
+      <h5>All rights reserved</h5>
     </Container>
-  )
-}
+  );
+};
 
 const Container = styled.footer`
   height: 5rem;
@@ -33,4 +37,5 @@ const Container = styled.footer`
     flex-direction: row;
   }
 `;
+
 export default Footer;
